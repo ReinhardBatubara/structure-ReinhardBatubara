@@ -1,0 +1,54 @@
+{
+  "tests": [
+    {
+      "name": "t05&#45;01&#45;01",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nski\r\nski\r\nfind\r\nski\r\nregister\r\nskin\r\nkulit\r\nfind\r\nski\r\nfind\r\nskin\r\n---\r\n",
+      "output": "ski#ski\r\nski#ski\r\nskin#kulit\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "t05&#45;01&#45;02",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "find\r\nbag\r\nregister\r\nbag\r\ntas\r\nfind\r\nbag\r\n---\r\n",
+      "output": "bag#tas\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "t05&#45;01&#45;03",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "---\r\n",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "t05&#45;01&#45;04",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nski\r\nski\r\nregister\r\nskin\r\nkulit\r\nregister\r\nbag\r\ntas\r\nregister\r\nsky\r\nlangit; angkasa; cakrawala; dirgantara; awang-awang\r\nregister\r\noffice\r\nkantor\r\nregister\r\nskull\r\ntulang\r\nfind\r\nskull\r\nfind\r\noffice\r\n---\r\n",
+      "output": "office#kantor\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    },
+    {
+      "name": "t05&#45;01&#45;05",
+      "setup": "make compile",
+      "run": "make -s test_01",
+      "input": "register\r\nski\r\nski\r\nfind\r\nski\r\nregister\r\nskin\r\nkulit\r\nfind\r\nski\r\nfind\r\nskin\r\nregister\r\nbag\r\ntas\r\nfind\r\nsky\r\nfind\r\nbag\r\nregister\r\nsky\r\nlangit; angkasa; cakrawala; dirgantara; awang-awang\r\nfind\r\nsky\r\n---\r\n",
+      "output": "ski#ski\r\nski#ski\r\nskin#kulit\r\nbag#tas\r\nsky#langit; angkasa; cakrawala; dirgantara; awang-awang\r\n",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 20
+    }
+  ]
+}
